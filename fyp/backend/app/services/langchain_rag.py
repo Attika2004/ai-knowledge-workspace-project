@@ -1,16 +1,4 @@
-"""
-LangChain-based RAG pipeline. Drop-in replacement for llm.rag_answer():
-same signature, same return type, so chat.py needs only a one-line import
-swap to use this instead.
 
-Wraps the existing Groq/Anthropic clients (via LangChain's ChatOpenAI /
-ChatAnthropic wrappers) and builds the prompt with an LCEL chain instead of
-hand-formatting a string, which is what "using LangChain for the RAG
-pipeline" means in practice for a chat-completions-style backend (no
-vectorstore retriever plugged in here since you already have a hybrid
-FAISS+BM25 retriever in vector_store.py -- that stays as-is and just feeds
-context_chunks into this chain, same as it fed llm.rag_answer() before).
-"""
 from typing import List
 
 from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
