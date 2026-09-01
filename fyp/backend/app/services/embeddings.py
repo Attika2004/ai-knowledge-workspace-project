@@ -1,18 +1,4 @@
-"""
-Embedding backend abstraction.
 
-Default backend: sentence-transformers (Hugging Face), running fully
-locally via PyTorch -- no API key, no per-request network call. Model
-weights download once from Hugging Face on first run and are cached
-locally after that (~90MB for the default model).
-
-A TF-IDF+SVD fallback is kept for machines where installing torch/
-sentence-transformers isn't practical (e.g. constrained CI runners) --
-switch via EMBEDDING_BACKEND=tfidf in backend/.env.
-
-vector_store.py only ever calls `backend.fit(texts)` and
-`backend.embed_query(text)`, so either backend is a drop-in swap.
-"""
 from typing import List
 
 import numpy as np
