@@ -1,8 +1,4 @@
-"""
-Minimal tool-calling agent. Works with either provider (Groq/OpenAI-style
-function calling, or Anthropic-style tool use) since the two APIs describe
-and exchange tool calls differently.
-"""
+
 import ast
 import operator
 import json
