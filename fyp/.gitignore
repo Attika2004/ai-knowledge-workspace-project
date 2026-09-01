@@ -1,0 +1,10 @@
+venv/
+.venv/
+__pycache__/
+*.pyc
+.env
+faiss_store/
+node_modules/
+dist/
+build/
+*.log

@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #EDEFEA;
+  --color-paper-dim: #E2E4DC;
+  --color-card: #F7F8F4;
+  --color-ink: #1E2A28;
+  --color-ink-soft: #4A5654;
+  --color-lamp: #2F6F62;
+  --color-lamp-dark: #234F45;
+  --color-brass: #B8863B;
+  --color-brass-light: #E4CB98;
+  --color-rule: #C9CBC0;
+  --color-danger: #B0433D;
+
+  --font-display: 'Fraunces', serif;
+  --font-body: 'IBM Plex Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+::selection {
+  background-color: var(--color-brass-light);
+}
+
+/* Signature element: catalog-tab citation markers */
+.catalog-tab {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.35rem;
+  height: 1.35rem;
+  padding: 0 0.3rem;
+  border: 1px solid var(--color-brass);
+  color: var(--color-lamp-dark);
+  background: var(--color-brass-light);
+  border-radius: 2px;
+  cursor: pointer;
+  transform: translateY(-2px);
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+.catalog-tab:hover {
+  background: var(--color-brass);
+  color: var(--color-paper);
+  transform: translateY(-3px);
+}
+
+.rule {
+  border-color: var(--color-rule);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
