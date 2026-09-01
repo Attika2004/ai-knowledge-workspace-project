@@ -1,10 +1,4 @@
-"""
-Per-user vector store built on FAISS + the embedding backend, plus a BM25
-keyword index, combined for hybrid search. Index is rebuilt from the DB
-whenever a user's document set changes -- fine at FYP/demo scale (hundreds
-to low thousands of chunks). For production scale you'd move to incremental
-upsert-capable stores (pgvector, Qdrant, etc.) -- noted in the README.
-"""
+
 import os
 import pickle
 from typing import List, Optional, Tuple
