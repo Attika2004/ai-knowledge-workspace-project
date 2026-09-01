@@ -1,14 +1,4 @@
-"""
-Thin LLM wrapper supporting two providers behind one interface:
 
-  - "groq"      (default, FREE, no credit card): uses the OpenAI-compatible
-                 client pointed at Groq's endpoint.
-  - "anthropic" (paid): uses Claude directly.
-
-Switch providers via LLM_PROVIDER in backend/.env. Nothing else in the app
-needs to change -- routes only ever call rag_answer() / the agent module,
-never the provider clients directly.
-"""
 from typing import List, Optional
 
 from app.core.config import settings

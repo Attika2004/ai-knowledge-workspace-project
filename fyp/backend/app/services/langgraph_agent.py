@@ -1,14 +1,4 @@
-"""
-LangGraph-based tool-calling agent. Drop-in replacement for
-agent.run_agent(): same signature (db, user_id, question, history), same
-return type (answer: str, tool_calls_made: List[str]).
 
-Replaces the hand-rolled tool-call loop in agent.py with a proper
-StateGraph: an `agent` node that calls the LLM (bound with tools) and a
-`tools` node that executes whichever tool(s) the LLM asked for, looping
-until the LLM stops requesting tools. This is the standard LangGraph
-ReAct-style agent pattern.
-"""
 import ast
 import operator
 from typing import Annotated, List, TypedDict
